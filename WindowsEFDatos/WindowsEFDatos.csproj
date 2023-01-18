@@ -58,12 +58,6 @@
   <ItemGroup>
     <Compile Include="Dac\AbmAvion.cs" />
     <Compile Include="Dac\AbmLineaAerea.cs" />
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormAvion.cs">
       <SubType>Form</SubType>
     </Compile>

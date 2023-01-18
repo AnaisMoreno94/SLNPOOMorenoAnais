@@ -27,5 +27,11 @@ namespace WindowsEFDatos.Models
 
         [ForeignKey("LineaAereaID")]
         public LineaAerea LineaAerea { get; set; }
+
+
+        public override string ToString()
+        {
+            return $"Avion ID:{IdAvion}, Denominacion: {Denominacion}, Linea Aerea ID = {LineaAereaID}";
+        }
     }
 }

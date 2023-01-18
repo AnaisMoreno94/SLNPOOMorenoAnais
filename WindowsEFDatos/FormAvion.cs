@@ -40,5 +40,43 @@ namespace WindowsEFDatos
         {
             MostrarTodosAviones();
         }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            Avion avion = new Avion() { Denominacion = txtDeno.Text, IdAvion= Convert.ToInt32(txtID.Text)};
+            int filasAfectadas = AbmAvion.Editar(avion);
+            if (filasAfectadas > 0) 
+            {
+                MessageBox.Show("Avion Editado Correctamente");
+                MostrarTodosAviones();
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            Avion avion = AbmAvion.TraerUno(Convert.ToInt32(txtID.Text));
+            if (avion != null) 
+            {
+                int filasAfectadas = AbmAvion.Eliminar(avion.IdAvion);
+                if (filasAfectadas > 0)
+                {
+                    MessageBox.Show("Avion Eliminado Correctamente");
+                    MostrarTodosAviones();
+                }
+
+            } else MessageBox.Show("El ID no pertenece a ningun avion existente");
+
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            //Traer Uno 
+            Avion avion = AbmAvion.TraerUno(Convert.ToInt32(txtID.Text));
+            if (avion != null) 
+            {
+                MessageBox.Show(avion.ToString());
+            } else MessageBox.Show("El ID no pertenece a ningun avion existente");
+        }
     }
 }

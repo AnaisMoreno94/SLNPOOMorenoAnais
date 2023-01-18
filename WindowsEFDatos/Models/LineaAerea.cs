@@ -24,5 +24,10 @@ namespace WindowsEFDatos.Models
 
 
         public List<Avion> Aviones { get; set; }
+
+        public override string ToString()
+        {
+            return Nombre;
+        }
     }
 }
